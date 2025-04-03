@@ -1,7 +1,7 @@
 ﻿import React from "react";
 import Image from "next/image";
 
-interface ItemProductProps {
+export interface ItemProductProps {
   imageUrl: string;
   imageAlt: string;
   productName: string;
@@ -17,8 +17,8 @@ export default function ItemProduct({
   originalPrice,
 }: ItemProductProps) {
   return (
-    <div className="bg-white flex flex-col items-center max-w-xs group">
-      <div className="relative w-full h-80 mb-0">
+    <div className="bg-white flex flex-col items-center group">
+      <div className="relative w-full h-78 mb-0">
         <Image
           src={imageUrl}
           alt={imageAlt}
@@ -96,7 +96,7 @@ export default function ItemProduct({
         </span>
       </div>
 
-      <button className="bg-black text-white uppercase text-sm font-medium py-2 px-8 transition-colors w-50 cursor-pointer group-hover:bg-amber-500">
+      <button className="w-1/2 bg-black text-white uppercase text-xs font-medium py-2 px-3 transition-colors cursor-pointer group-hover:bg-amber-500">
         ADD TO CART
       </button>
     </div>
