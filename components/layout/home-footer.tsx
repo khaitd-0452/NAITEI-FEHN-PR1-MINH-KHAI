@@ -14,10 +14,10 @@ import {
 import { TiSocialGooglePlus } from "react-icons/ti";
 export default function HomeFooter() {
   return (
-    <footer className="bg-white text-sm text-gray-700">
-      <div className="container max-w-[1200px]  border-b-2 border-gray-200 mx-auto px-4  grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-items-center">
+    <footer className="bg-white text-sm text-gray-700 select-none ">
+      <div className="container max-w-[1200px]  border-b-2  mx-auto px-4  grid grid-cols-1 md:grid-cols-3 gap-8 items-center justify-items-center">
         <div
-          className={`  w-full h-48 flex items-center justify-center md:border-r-2 border-gray-200 `}
+          className={`  w-full h-48 flex items-center justify-center md:border-r-2  `}
         >
           <Image
             src="/images/authentic.png"
@@ -28,7 +28,7 @@ export default function HomeFooter() {
           />
         </div>
         <div
-          className={`  w-full h-48 flex items-center justify-center md:border-r-2 border-gray-200 `}
+          className={`  w-full h-48 flex items-center justify-center md:border-r-2  `}
         >
           <Image
             src="/images/retrobrand.png"
@@ -60,7 +60,7 @@ export default function HomeFooter() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-yellow-500 transition-colors text-gray-500"
+                    className="hover:text-yellow-500 transition-colors text-muted-foreground"
                   >
                     Về chúng tôi
                   </a>
@@ -68,7 +68,7 @@ export default function HomeFooter() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-yellow-500 transition-colors text-gray-500"
+                    className="hover:text-yellow-500 transition-colors text-muted-foreground"
                   >
                     Giao hàng
                   </a>
@@ -76,7 +76,7 @@ export default function HomeFooter() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-yellow-500 transition-colors text-gray-500"
+                    className="hover:text-yellow-500 transition-colors text-muted-foreground"
                   >
                     Cài đặt
                   </a>
@@ -85,7 +85,7 @@ export default function HomeFooter() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-yellow-500 transition-colors text-gray-500"
+                    className="hover:text-yellow-500 transition-colors text-muted-foreground"
                   >
                     Lưu trữ
                   </a>
@@ -93,7 +93,7 @@ export default function HomeFooter() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-yellow-500 transition-colors text-gray-500"
+                    className="hover:text-yellow-500 transition-colors text-muted-foreground"
                   >
                     Chính sách riêng tư
                   </a>
@@ -108,7 +108,7 @@ export default function HomeFooter() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-yellow-500 transition-colors text-gray-500"
+                    className="hover:text-yellow-500 transition-colors text-muted-foreground"
                   >
                     Vận chuyển và tra hàng
                   </a>
@@ -116,7 +116,7 @@ export default function HomeFooter() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-yellow-500 transition-colors text-gray-500"
+                    className="hover:text-yellow-500 transition-colors text-muted-foreground"
                   >
                     Mua hàng an toàn
                   </a>
@@ -124,7 +124,7 @@ export default function HomeFooter() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-yellow-500 transition-colors text-gray-500"
+                    className="hover:text-yellow-500 transition-colors text-muted-foreground"
                   >
                     Vận quốc tế
                   </a>
@@ -132,7 +132,7 @@ export default function HomeFooter() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-yellow-500 transition-colors text-gray-500"
+                    className="hover:text-yellow-500 transition-colors text-muted-foreground"
                   >
                     Liên kết
                   </a>
@@ -140,7 +140,7 @@ export default function HomeFooter() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-yellow-500 transition-colors text-gray-500"
+                    className="hover:text-yellow-500 transition-colors text-muted-foreground"
                   >
                     Dịch vụ giảm giá
                   </a>
@@ -153,7 +153,7 @@ export default function HomeFooter() {
           <h3 className=" text-xl  mb-4 text-gray-900 uppercase tracking-widest">
             Gửi Email
           </h3>
-          <p className="mb-3 text-gray-500">
+          <p className="mb-3 text-muted-foreground">
             Gửi email cho chúng tôi để được hỗ trợ
           </p>
           <form className="flex items-center mb-4">
@@ -170,7 +170,7 @@ export default function HomeFooter() {
               GỬI
             </Button>
           </form>
-          <div className="flex space-x-3 text-gray-500">
+          <div className="flex space-x-3 text-muted-foreground">
             <a
               href="#"
               aria-label="Twitter"
@@ -211,14 +211,14 @@ export default function HomeFooter() {
                 size={18}
                 className="mr-2 mt-0.5 flex-shrink-0 text-gray-600"
               />
-              <span className="text-gray-500">
+              <span className="text-muted-foreground">
                 Tầng 4, Tòa nhà Hanoi Group, Số 442 Đội Cấn, P. Cống Vị, Q. Ba
                 Đình, Hà Nội
               </span>
             </li>
             <li className="flex items-center">
               <Phone size={18} className="mr-2 flex-shrink-0 text-gray-600" />
-              <span className="text-gray-500">
+              <span className="text-muted-foreground">
                 (024) 6674 2332 - (024) 3786 8904
               </span>
             </li>
@@ -226,7 +226,7 @@ export default function HomeFooter() {
               <Mail size={18} className="mr-2 flex-shrink-0 text-gray-600" />
               <a
                 href="mailto:support@example.com"
-                className="hover:text-yellow-500 transition-colors text-gray-500"
+                className="hover:text-yellow-500 transition-colors text-muted-foreground"
               >
                 support@bizweb.vn
               </a>
@@ -235,7 +235,7 @@ export default function HomeFooter() {
         </div>
       </div>
 
-      <div className="container max-w-[1200px] border-t-2 border-gray-200    mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center text-xs ">
+      <div className="container max-w-[1200px] border-t-2     mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center text-xs ">
         <p className="mb-2 md:mb-0 text-center md:text-left">
           © Copyright 2008-2014 DKT Technology JSC
         </p>
