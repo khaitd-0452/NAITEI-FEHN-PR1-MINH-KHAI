@@ -8,6 +8,7 @@ interface ItemBlogProps {
   date: string;
   commentCount: number;
   description: string;
+  href: string; // Optional href prop for the link
 }
 
 export default function ItemBlog({
@@ -16,6 +17,7 @@ export default function ItemBlog({
   author,
   date,
   commentCount,
+  href,
   description,
 }: ItemBlogProps) {
   return (
@@ -38,7 +40,7 @@ export default function ItemBlog({
 
       <p className="text-gray-600 text-sm line-clamp-4">{description}</p>
 
-      <a href="#" className="text-gray-500 text-sm mt-1 hover:underline">
+      <a href={href} className="text-gray-500 text-sm mt-1 hover:underline">
         Read more
       </a>
     </div>

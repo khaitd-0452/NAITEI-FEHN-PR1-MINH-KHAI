@@ -1,12 +1,12 @@
 "use client"; // <<< Đánh dấu đây là Client Component
 
 import React, { useState, useMemo } from "react";
-import { Order, columns } from "./column"; // Adjust path, đảm bảo OrderStatusEN được export từ column.ts hoặc định nghĩa ở đây
 import { OrderDataTable } from "./order-data-table"; // Adjust path
 import { translateOrderStatusTS } from "@/lib/utils"; // Adjust path
 import { ColumnDef } from "@tanstack/react-table"; // Import ColumnDef
 import clsx from "clsx"; // Thư viện tiện ích để nối các class name có điều kiện
 import { OrderStatusEN } from "@/lib/constants";
+import { Order } from "@/lib/types";
 
 interface OrderListProps {
   initialOrders: Order[];
