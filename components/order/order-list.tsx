@@ -67,7 +67,6 @@ export function OrderList({ initialOrders, columns }: OrderListProps) {
         {filterableStatuses.map((statusKey, index) => (
           <React.Fragment key={statusKey ?? "all"}>
             {index > 0 && <span className="text-gray-300">|</span>}{" "}
-            {/* Thêm dấu | ngăn cách */}
             <button
               onClick={() => handleFilterClick(statusKey)}
               className={clsx(
