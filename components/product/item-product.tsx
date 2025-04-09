@@ -1,13 +1,7 @@
-﻿import React from "react";
+﻿"use client";
+import React from "react";
 import Image from "next/image";
-
-interface ItemProductProps {
-  imageUrl: string;
-  imageAlt: string;
-  productName: string;
-  currentPrice: string;
-  originalPrice: string;
-}
+import { ProductItem } from "@/lib/types/product";
 
 export default function ItemProduct({
   imageUrl,
@@ -15,10 +9,10 @@ export default function ItemProduct({
   productName,
   currentPrice,
   originalPrice,
-}: ItemProductProps) {
+}: ProductItem) {
   return (
-    <div className="bg-white flex flex-col items-center max-w-xs group">
-      <div className="relative w-full h-80 mb-0">
+    <div className="bg-white flex flex-col items-center max-w-xs group cursor-pointer">
+      <div className="relative w-full h-52 sm:h-64 md:h-72 lg:h-78 mb-0">
         <Image
           src={imageUrl}
           alt={imageAlt}
@@ -96,7 +90,7 @@ export default function ItemProduct({
         </span>
       </div>
 
-      <button className="bg-black text-white uppercase text-sm font-medium py-2 px-8 transition-colors w-50 cursor-pointer group-hover:bg-amber-500">
+      <button className="bg-black text-white uppercase text-xs font-medium py-2 transition-colors w-full sm:w-40 cursor-pointer group-hover:bg-amber-500">
         ADD TO CART
       </button>
     </div>

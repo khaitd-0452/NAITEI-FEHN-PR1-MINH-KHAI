@@ -5,7 +5,6 @@ import Link from "next/link";
 import { formatVndThousands, translateOrderStatusTS } from "@/lib/utils";
 import { Order } from "@/lib/types";
 
-
 export const columns: ColumnDef<Order>[] = [
   {
     accessorKey: "stt",
