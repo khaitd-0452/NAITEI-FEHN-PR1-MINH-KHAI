@@ -1,24 +1,20 @@
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 export default async function NotFound() {
   return (
-    <div className="w-screen h-screen bg-background flex justify-center  items-center">
-      {/* Using the dictionary by selected language: */}
-      <div className="w-fit relative flex justify-center">
-        <Image
-          //   className="dark:invert"
-          src="/vercel.svg"
-          alt="Vercel logomark"
-          width={300}
-          height={300}
-        />
-        <div className="flex self-end flex-col sm:ml-10 ml-4  ">
-          <h1 className="sm:text-9xl text-7xl font-bold mb-6 mt-8 silver">
-            404
-          </h1>
-          <h2 className="sm:text-2xl  font-bold silver uppercase">
-            Đường dẫn không tồn tại
-          </h2>
-        </div>
+    <div className=" bg-background flex justify-center  items-center">
+      <Image
+        src={"/images/404.jpg"}
+        alt="404"
+        width={500}
+        height={500}
+        className="w-screen h-sc"
+      />
+      <div className="absolute bottom-20 text-center  text-muted-foreground">
+        <Button asChild size={"lg"} className="text-xl py-7">
+          <Link href="/">Quay lại trang chủ</Link>
+        </Button>
       </div>
     </div>
   );
