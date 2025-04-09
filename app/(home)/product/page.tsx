@@ -6,7 +6,7 @@ import axios from "axios";
 import { formatVndThousands } from "@/lib/utils";
 import { ProductList } from "@/components/product/product-list";
 
-async function getProductList(): Promise<ProductItem[]> {
+export async function getProductList(): Promise<ProductItem[]> {
   try {
     const res = await axios.get(`${process.env.SERVER_API_URL}/products`);
     const productsData: ProductItem[] = res.data.map((product: Product) => ({
@@ -22,6 +22,8 @@ async function getProductList(): Promise<ProductItem[]> {
       subcategory: product.subcategory,
       tags: product.tags,
       description: product.description,
+      createdAt: product.created_at,
+      point: product.point,
     }));
     return productsData;
   } catch (error) {
