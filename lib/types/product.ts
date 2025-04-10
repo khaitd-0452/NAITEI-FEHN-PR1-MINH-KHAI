@@ -32,4 +32,6 @@ export type ProductItem = {
   subcategory: string;
   tags: string[];
   description: string;
+  createdAt?: string;
+  point?: number;
 };

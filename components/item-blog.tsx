@@ -1,7 +1,7 @@
 ﻿import React from "react";
 import Image from "next/image";
 
-interface ItemBlogProps {
+export interface ItemBlogProps {
   imageUrl: string;
   title: string;
   author: string;
@@ -21,8 +21,8 @@ export default function ItemBlog({
   description,
 }: ItemBlogProps) {
   return (
-    <div className="bg-white flex flex-col max-w-sm">
-      <div className="relative w-full h-64">
+    <div className="bg-white flex flex-col max-w-sm text-start">
+      <div className="relative w-full h-56">
         <Image
           src={imageUrl}
           alt={title}
@@ -38,7 +38,9 @@ export default function ItemBlog({
         Đăng bởi {author} | {date} | {commentCount} bình luận
       </p>
 
-      <p className="text-gray-600 text-sm line-clamp-4">{description}</p>
+      <p className="text-gray-600 text-sm line-clamp-4 text-start">
+        {description}
+      </p>
 
       <a href={href} className="text-gray-500 text-sm mt-1 hover:underline">
         Read more
