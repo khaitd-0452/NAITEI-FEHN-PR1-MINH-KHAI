@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Merriweather, Merriweather_Sans } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/app/context/AuthContext";
+import { Toaster } from "@/components/ui/sonner";
 
 const merriweatherSans = Merriweather_Sans({
   // variable: "--font-merriweather-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
         className={`${merriweatherMono.className} ${merriweatherSans.className} antialiased`}
       >
         <AuthProvider>{children}</AuthProvider>
+        <Toaster />
       </body>
     </html>
   );

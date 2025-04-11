@@ -276,7 +276,7 @@
   "addresses": [
     {
       "id": "0acf2e6f-702b-4e7d-aeb9-6fbbf4ab4dad",
-      "userId": "d587573e-73b2-4fe9-89d8-3cfbcf63f672",
+      "userId": "d3756666-0bf0-4a18-bd72-8ccd2b56b1d8",
       "first_name": "First1",
       "last_name": "Last1",
       "company": "Company1",
@@ -285,7 +285,7 @@
       "country": "Korea",
       "zipcode": "1000",
       "phone": "123-456-7800",
-      "default": true,
+      "default": false,
       "created_at": "2025-03-25T12:43:39.593251",
       "updated_at": "2024-09-25T11:13:46.593266"
     },
@@ -1512,15 +1512,6 @@
       "updated_at": "2024-08-14T20:01:33.595061"
     },
     {
-      "id": "0fc504d4-8550-4b3e-8b6c-961cc41546b8",
-      "userId": "0aa28a8-155e-4bf3-9980-32cd102225e2",
-      "productId": "29c91a99-84a3-4e8d-9875-4cbcadcee094",
-      "quantity": 2,
-      "checked": false,
-      "created_at": "2024-09-27T05:54:42.595079",
-      "updated_at": "2024-04-14T10:58:51.595083"
-    },
-    {
       "id": "f69a526b-3cc7-4895-9a5d-4ad6f12cda69",
       "userId": "0aa28ba8-155e-4bf3-9980-32cd102225e2",
       "productId": "81fb479d-238d-48b8-bc06-56e6027061a8",
@@ -1528,24 +1519,6 @@
       "checked": true,
       "created_at": "2025-02-06T13:52:19.595094",
       "updated_at": "2024-06-01T20:43:10.595098"
-    },
-    {
-      "id": "a2384293-8237-47c8-b32a-ac1c53044a36",
-      "userId": "d3756666-0bf0-4a18-bd72-8ccd2b56b1d8",
-      "productId": "e2f22462-6df0-435c-bee1-80c01e6116a4",
-      "quantity": 3,
-      "checked": true,
-      "created_at": "2024-08-29T18:22:22.595110",
-      "updated_at": "2024-06-09T03:32:24.595114"
-    },
-    {
-      "id": "bec26860-0570-4a4f-bf9f-37e18e61f6a6",
-      "userId": "d3756666-0bf0-4a18-bd72-8ccd2b56b1d8",
-      "productId": "e2f22462-6df0-435c-bee1-80c01e6116a4",
-      "quantity": 3,
-      "checked": true,
-      "created_at": "2024-06-14T11:55:44.595126",
-      "updated_at": "2024-11-29T06:42:17.595130"
     },
     {
       "id": "235b649e-575a-4a49-be86-dffa608b9cfd",
@@ -1960,12 +1933,12 @@
     {
       "id": "6ca70dce-05ff-4991-b729-36b64866f98d",
       "userId": "d587573e-73b2-4fe9-89d8-3cfbcf63f672",
-      "status": "shipped",
+      "status": "delivered",
       "addressId": "0acf2e6f-702b-4e7d-aeb9-6fbbf4ab4dad",
       "total_price": 409,
       "payment_method": "Thanh toán trực tuyến",
       "created_at": "2025-01-31T20:14:53.596108",
-      "updated_at": "2025-01-18T08:39:52.596112"
+      "updated_at": "2025-04-14T09:05:02.114Z"
     },
     {
       "id": "fae2a1e9-0181-4b90-801f-1adb1187d2b1",
@@ -2086,6 +2059,56 @@
       "payment_method": "Thanh toán tại quầy",
       "created_at": "2024-08-16T15:47:24.596299",
       "updated_at": "2024-12-12T11:46:45.596303"
+    },
+    {
+      "addressId": "21a494c5-ec76-4ce3-8f6d-8ea059c20c58",
+      "payment_method": "Thanh toán tại quầy",
+      "total_price": 510,
+      "status": "pending",
+      "created_at": "2025-04-11T09:30:43.492Z",
+      "updated_at": "2025-04-11T09:30:43.492Z",
+      "userId": "d3756666-0bf0-4a18-bd72-8ccd2b56b1d8",
+      "id": "674fd9b9-f6ea-4b3f-b727-0f03d65b0f2e"
+    },
+    {
+      "addressId": "21a494c5-ec76-4ce3-8f6d-8ea059c20c58",
+      "payment_method": "Thanh toán trực tuyến",
+      "total_price": 510,
+      "status": "pending",
+      "created_at": "2025-04-11T09:36:08.340Z",
+      "updated_at": "2025-04-11T09:36:08.340Z",
+      "userId": "d3756666-0bf0-4a18-bd72-8ccd2b56b1d8",
+      "id": "6db62339-a6a2-4eb4-bdf9-e66477bef5e2"
+    },
+    {
+      "addressId": "21a494c5-ec76-4ce3-8f6d-8ea059c20c58",
+      "payment_method": "Thanh toán tại quầy",
+      "total_price": 510,
+      "status": "pending",
+      "created_at": "2025-04-11T09:36:31.932Z",
+      "updated_at": "2025-04-11T09:36:31.932Z",
+      "userId": "d3756666-0bf0-4a18-bd72-8ccd2b56b1d8",
+      "id": "b196d704-c9d3-42ec-96b1-3f5ea9c9d6b2"
+    },
+    {
+      "addressId": "21a494c5-ec76-4ce3-8f6d-8ea059c20c58",
+      "payment_method": "Thanh toán tại quầy",
+      "total_price": 510,
+      "status": "cancelled",
+      "created_at": "2025-04-11T09:37:19.806Z",
+      "updated_at": "2025-04-11T09:52:49.676Z",
+      "userId": "d3756666-0bf0-4a18-bd72-8ccd2b56b1d8",
+      "id": "564353e0-e5ff-4d25-96c3-437072436e63"
+    },
+    {
+      "addressId": "21a494c5-ec76-4ce3-8f6d-8ea059c20c58",
+      "payment_method": "Thanh toán tại quầy",
+      "total_price": 510,
+      "status": "pending",
+      "created_at": "2025-04-11T09:56:34.274Z",
+      "updated_at": "2025-04-11T09:56:34.274Z",
+      "userId": "d3756666-0bf0-4a18-bd72-8ccd2b56b1d8",
+      "id": "2af5089c-5bee-4e44-8981-1a62324eb841"
     }
   ],
   "order_items": [
@@ -2512,6 +2535,78 @@
       "quantity": 1,
       "created_at": "2024-11-18T18:23:42.597255",
       "updated_at": "2024-04-22T08:40:46.597259"
+    },
+    {
+      "orderId": "674fd9b9-f6ea-4b3f-b727-0f03d65b0f2e",
+      "productId": "e2f22462-6df0-435c-bee1-80c01e6116a4",
+      "quantity": 3,
+      "price": 85,
+      "created_at": "2025-04-11T09:30:43.492Z",
+      "updated_at": "2025-04-11T09:30:43.492Z",
+      "id": "S-gSN5m"
+    },
+    {
+      "orderId": "674fd9b9-f6ea-4b3f-b727-0f03d65b0f2e",
+      "productId": "e2f22462-6df0-435c-bee1-80c01e6116a4",
+      "quantity": 3,
+      "price": 85,
+      "created_at": "2025-04-11T09:30:43.492Z",
+      "updated_at": "2025-04-11T09:30:43.492Z",
+      "id": "bXxrieB"
+    },
+    {
+      "orderId": "6db62339-a6a2-4eb4-bdf9-e66477bef5e2",
+      "productId": "e2f22462-6df0-435c-bee1-80c01e6116a4",
+      "quantity": 3,
+      "price": 85,
+      "created_at": "2025-04-11T09:36:08.340Z",
+      "updated_at": "2025-04-11T09:36:08.340Z",
+      "id": "538hlwc"
+    },
+    {
+      "orderId": "6db62339-a6a2-4eb4-bdf9-e66477bef5e2",
+      "productId": "e2f22462-6df0-435c-bee1-80c01e6116a4",
+      "quantity": 3,
+      "price": 85,
+      "created_at": "2025-04-11T09:36:08.340Z",
+      "updated_at": "2025-04-11T09:36:08.340Z",
+      "id": "8P7HqVy"
+    },
+    {
+      "orderId": "b196d704-c9d3-42ec-96b1-3f5ea9c9d6b2",
+      "productId": "e2f22462-6df0-435c-bee1-80c01e6116a4",
+      "quantity": 3,
+      "price": 85,
+      "created_at": "2025-04-11T09:36:31.932Z",
+      "updated_at": "2025-04-11T09:36:31.932Z",
+      "id": "M2otDHj"
+    },
+    {
+      "orderId": "b196d704-c9d3-42ec-96b1-3f5ea9c9d6b2",
+      "productId": "e2f22462-6df0-435c-bee1-80c01e6116a4",
+      "quantity": 3,
+      "price": 85,
+      "created_at": "2025-04-11T09:36:31.932Z",
+      "updated_at": "2025-04-11T09:36:31.932Z",
+      "id": "UeWRWFu"
+    },
+    {
+      "orderId": "564353e0-e5ff-4d25-96c3-437072436e63",
+      "productId": "e2f22462-6df0-435c-bee1-80c01e6116a4",
+      "quantity": 3,
+      "price": 85,
+      "created_at": "2025-04-11T09:37:19.806Z",
+      "updated_at": "2025-04-11T09:37:19.806Z",
+      "id": "P01_oat"
+    },
+    {
+      "orderId": "564353e0-e5ff-4d25-96c3-437072436e63",
+      "productId": "e2f22462-6df0-435c-bee1-80c01e6116a4",
+      "quantity": 3,
+      "price": 85,
+      "created_at": "2025-04-11T09:37:19.806Z",
+      "updated_at": "2025-04-11T09:37:19.806Z",
+      "id": "xKMVQ7D"
     }
   ],
   "blogs": [
