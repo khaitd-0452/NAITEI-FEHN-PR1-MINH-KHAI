@@ -7,6 +7,8 @@ import axios from "axios";
 import { columns } from "@/components/order/column"; // Adjust path
 import { OrderList } from "@/components/order/order-list"; // <<< Import Client Component mới
 import { Order } from "@/lib/types";
+import { getCurrentUserServer } from "@/lib/server-utils";
+import { notFound } from "next/navigation";
 
 const sampleCustomerInfo = {
   name: "GiangLe",
@@ -17,10 +19,10 @@ const sampleCustomerInfo = {
   addressDetailUrl: "/addresses",
 };
 
-async function getOrders(): Promise<Order[]> {
+async function getOrders(userId: string): Promise<Order[]> {
   try {
     const res = await axios.get(
-      `${process.env.SERVER_API_URL}/orders?_embed=order_items`
+      `${process.env.NEXT_PUBLIC_SERVER_API_URL}/orders?_embed=order_items&_sort=created_at&_order=desc&userId=${userId}`
     );
     const ordersData = res.data.map(
       (order: any, index: number) =>
@@ -44,7 +46,12 @@ async function getOrders(): Promise<Order[]> {
 }
 
 export default async function OrderPage() {
-  const initialOrders = await getOrders();
+  const currentUser = await getCurrentUserServer();
+  if (!currentUser) {
+    notFound();
+  }
+
+  const initialOrders = await getOrders(currentUser.id);
   const customerInfo = sampleCustomerInfo;
 
   return (
@@ -75,11 +82,11 @@ export default async function OrderPage() {
             <div className="space-y-2 text-sm text-gray-700">
               <div className="flex items-center gap-2">
                 <FaUser className="text-gray-500" />
-                <span className="font-medium">{customerInfo.name}</span>
+                <span className="font-medium">{currentUser.full_name}</span>
               </div>
               <div className="flex items-center gap-2">
                 <FaEnvelope className="text-gray-500" />
-                <span>{customerInfo.email}</span>
+                <span>{currentUser.email}</span>
               </div>
               {customerInfo.company && (
                 <div className="flex items-start gap-2">
