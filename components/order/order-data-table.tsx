@@ -5,6 +5,8 @@ import {
   ColumnDef,
   flexRender,
   getCoreRowModel,
+  getSortedRowModel,
+  SortingState,
   getPaginationRowModel, // Import pagination
   useReactTable,
 } from "@tanstack/react-table";
@@ -12,6 +14,7 @@ import {
 import {
   Table,
   TableBody,
+  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -24,15 +27,23 @@ interface DataTableProps<TData, TValue> {
   data: TData[];
 }
 
-export function   OrderDataTable<TData, TValue>({
+export function OrderDataTable<TData, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) {
+  const [sorting, setSorting] = React.useState<SortingState>([]);
+
   const table = useReactTable({
     data,
     columns,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+    getSortedRowModel: getSortedRowModel(), // <-- Add this
+    onSortingChange: setSorting, // <-- Add this
+    state: {
+      // <-- Add this state object
+      sorting,
+    },
     initialState: {
       pagination: {
         pageSize: 5,
@@ -101,28 +112,45 @@ export function   OrderDataTable<TData, TValue>({
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-end space-x-2">
-        <span className="text-sm text-muted-foreground">
-          Trang {table.getState().pagination.pageIndex + 1} /
-          {table.getPageCount()}
-        </span>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Trước
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Sau
-        </Button>
-      </div>
+      <section
+        className={`flex flex-row items-center justify-end  ${
+          sorting.length > 0 && "!justify-between"
+        } `}
+      >
+        {sorting.length > 0 && ( // Only show if sorting is active
+          <div className="flex justify-start">
+            <Button
+              variant="destructive"
+              size="sm"
+              onClick={() => setSorting([])} // Reset sorting state
+            >
+              Bỏ sắp xếp
+            </Button>
+          </div>
+        )}
+        <div className=" flex items-center justify-end space-x-2">
+          <span className="text-sm text-muted-foreground">
+            Trang {table.getState().pagination.pageIndex + 1} /
+            {table.getPageCount()}
+          </span>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.previousPage()}
+            disabled={!table.getCanPreviousPage()}
+          >
+            Trước
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.nextPage()}
+            disabled={!table.getCanNextPage()}
+          >
+            Sau
+          </Button>
+        </div>
+      </section>
     </div>
   );
 }

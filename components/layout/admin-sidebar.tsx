@@ -10,11 +10,13 @@ import { BiMenu, BiNotification } from "react-icons/bi";
 
 import { IoLogoGameControllerB } from "react-icons/io";
 import { LogOut, Settings2 } from "lucide-react";
+import { useAuth } from "@/app/context/AuthContext";
+import { log } from "console";
 
 export default function AdminSideBar() {
   const [expand, setExpand] = useState(false);
   const [openTools, setOpenTools] = useState(false);
-
+  const { currentUser, logout } = useAuth();
   const pathname = usePathname();
 
   return (
@@ -59,12 +61,13 @@ export default function AdminSideBar() {
                   className={cn(
                     " 2xl:text-4xl text-3xl flex justify-between items-center group  "
                   )}
+                  onClick={() => setExpand(false)}
                 >
                   <div
                     className={cn(
                       " rounded-full p-3 duration-500 group-hover:text-primary  ",
                       isAtLocation &&
-                        " shine scale-125 bg-primary group-hover:text-white  text-white "
+                        " shine scale-105 bg-primary group-hover:text-white  text-white "
                     )}
                   >
                     <item.icon />
@@ -83,6 +86,9 @@ export default function AdminSideBar() {
                 "2xl:text-3xl hover:bg-primary/70 cursor-pointer  text-xl duration-500 h-12 w-12 flex items-center justify-center bg-primary opacity-0 translate-y-20 delay-200 text-muted rounded-full ",
                 openTools && "translate-y-0 opacity-100"
               )}
+              onClick={() => {
+                setExpand(false);
+              }}
             >
               <BiNotification />
             </li>
@@ -92,14 +98,16 @@ export default function AdminSideBar() {
                 "2xl:text-3xl hover:bg-primary/70 cursor-pointer  text-xl duration-500 h-12 w-12 flex items-center justify-center  bg-primary opacity-0 translate-y-20 delay-100 text-muted rounded-full ",
                 openTools && "translate-y-0 opacity-100"
               )}
-              onClick={() => {}}
+              onClick={() => {
+                setExpand(false);
+              }}
             >
               <Settings2 />
             </li>
 
             <li
               onClick={() => {
-                // onOpen();
+                logout();
                 setExpand(false);
               }}
               className={cn(
@@ -148,7 +156,7 @@ export default function AdminSideBar() {
                 <h3
                   className={cn(
                     " text-lg line-clamp-1 whitespace-nowrap  duration-500   opacity-0 ",
-                    pathname === item.href && "  scale-125 font-bold ",
+                    pathname === item.href && "  scale-105 font-bold ",
                     expand && " opacity-100 "
                   )}
                 >
@@ -167,6 +175,9 @@ export default function AdminSideBar() {
                 " text-muted-foreground  whitespace-nowrap cursor-pointer  duration-500 2xl:h-[46px] xl:h-[36px] h-[28px] flex items-center justify-end  opacity-0 translate-y-20 delay-200   ",
                 openTools && "translate-y-0 opacity-100"
               )}
+              onClick={() => {
+                setExpand(false);
+              }}
             >
               Thông báo
             </li>
@@ -175,6 +186,9 @@ export default function AdminSideBar() {
                 " text-muted-foreground  whitespace-nowrap cursor-pointer  duration-500 2xl:h-[46px] xl:h-[36px] h-[28px] flex items-center justify-end  opacity-0 translate-y-20 delay-100   ",
                 openTools && "translate-y-0 opacity-100"
               )}
+              onClick={() => {
+                setExpand(false);
+              }}
             >
               Cài đặt
             </li>
@@ -183,6 +197,10 @@ export default function AdminSideBar() {
                 " text-muted-foreground  whitespace-nowrap cursor-pointer  duration-500 2xl:h-[46px] xl:h-[36px] h-[28px] flex items-center justify-end  opacity-0 translate-y-20   ",
                 openTools && "translate-y-0 opacity-100"
               )}
+              onClick={() => {
+                logout();
+                setExpand(false);
+              }}
             >
               Đăng xuất
             </li>

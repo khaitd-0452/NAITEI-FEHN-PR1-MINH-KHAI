@@ -112,12 +112,12 @@ export default function CreateOrderClient({
           orderId: orderId,
           productId: item.productId,
           quantity: item.quantity,
-          price: item.product.price,
           created_at: now,
           updated_at: now,
         };
         return axios.post(
-          `${process.env.NEXT_PUBLIC_SERVER_API_URL}/order_items/${item.id}`
+          `${process.env.NEXT_PUBLIC_SERVER_API_URL}/order_items`,
+          itemPayload
         );
       });
 

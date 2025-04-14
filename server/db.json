@@ -1885,7 +1885,7 @@
     {
       "id": "70bb9b8d-5cba-4a69-93e2-89dc1bb5e5fe",
       "userId": "64b2d01b-3bbe-45bc-824f-f5c8347c27bb",
-      "status": "pending",
+      "status": "cancelled",
       "addressId": "4e303317-0492-4f79-823a-b3f3ae8f9f16",
       "total_price": 211,
       "payment_method": "Thanh toán trực tuyến",
@@ -2146,9 +2146,9 @@
       "addressId": "21a494c5-ec76-4ce3-8f6d-8ea059c20c58",
       "payment_method": "Thanh toán tại quầy",
       "total_price": 510,
-      "status": "pending",
+      "status": "delivered",
       "created_at": "2025-04-11T09:36:31.932Z",
-      "updated_at": "2025-04-11T09:36:31.932Z",
+      "updated_at": "2025-04-16T02:45:08.352Z",
       "userId": "d3756666-0bf0-4a18-bd72-8ccd2b56b1d8",
       "id": "b196d704-c9d3-42ec-96b1-3f5ea9c9d6b2"
     },
@@ -2161,16 +2161,6 @@
       "updated_at": "2025-04-11T09:52:49.676Z",
       "userId": "d3756666-0bf0-4a18-bd72-8ccd2b56b1d8",
       "id": "564353e0-e5ff-4d25-96c3-437072436e63"
-    },
-    {
-      "addressId": "21a494c5-ec76-4ce3-8f6d-8ea059c20c58",
-      "payment_method": "Thanh toán tại quầy",
-      "total_price": 510,
-      "status": "pending",
-      "created_at": "2025-04-11T09:56:34.274Z",
-      "updated_at": "2025-04-11T09:56:34.274Z",
-      "userId": "d3756666-0bf0-4a18-bd72-8ccd2b56b1d8",
-      "id": "2af5089c-5bee-4e44-8981-1a62324eb841"
     }
   ],
   "order_items": [

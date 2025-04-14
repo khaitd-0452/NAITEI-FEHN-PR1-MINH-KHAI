@@ -16,7 +16,7 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL("/", request.url));
   }
 
-  const protectedPaths = ["/cart", "/profile", "/addresses", "/order",'/create-order'];
+  const protectedPaths = ["/cart", "/profile", "/addresses", "/order",'/create-order', '/admin', '/admin/user', '/admin/product', '/admin/order'];
   if (protectedPaths.includes(pathname) && !isLoggedIn) {
     return NextResponse.redirect(new URL("/auth/sign-in", request.url));
   }
