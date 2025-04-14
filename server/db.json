@@ -2675,281 +2675,381 @@
     {
       "id": "0b52a4bd-bb4d-4707-a35d-2c87c9ad30f7",
       "userId": "88e08203-8c40-4a04-8eeb-cad9e69482a3",
-      "title": "Blog Post 1",
-      "content": "Content for blog post 1",
+      "title": "Exploring the World of Red Wines",
+      "content": "Discover the rich flavors of Cabernet Sauvignon, with its bold tannins and dark fruit notes, perfect for pairing with hearty dishes.",
       "created_at": "2025-01-17T11:30:11.597538",
       "updated_at": "2024-12-23T12:39:29.597547",
       "images": [
         {
           "url": "/images/blog1.jpg",
-          "alt": "Blog 1 Image"
+          "alt": "Red Wine Glass"
         }
+      ],
+      "tags": [
+        "red wine",
+        "Cabernet Sauvignon",
+        "wine tasting"
       ]
     },
     {
       "id": "24d0ea09-99ff-4543-9e15-07083060775f",
       "userId": "942b5858-904f-46cf-9ca4-722fbe554fc9",
-      "title": "Blog Post 2",
-      "content": "Content for blog post 2",
+      "title": "The Charm of White Wines",
+      "content": "Chardonnay offers a creamy texture and notes of apple and citrus, ideal for light meals or a sunny afternoon sip.",
       "created_at": "2024-06-17T13:12:23.597566",
       "updated_at": "2024-11-12T09:20:23.597571",
       "images": [
         {
           "url": "/images/blog2.jpg",
-          "alt": "Blog 2 Image"
+          "alt": "White Wine Bottle"
         }
+      ],
+      "tags": [
+        "white wine",
+        "Chardonnay",
+        "wine pairing"
       ]
     },
     {
       "id": "8cb41a49-35d5-4493-94bd-39c36c412cdf",
       "userId": "2a6763a3-b34a-45e6-aa40-3e0384682599",
-      "title": "Blog Post 3",
-      "content": "Content for blog post 3",
+      "title": "Sparkling Wines for Celebrations",
+      "content": "Nothing says festivity like a glass of Prosecco, with its lively bubbles and crisp finish, perfect for toasts.",
       "created_at": "2024-05-07T06:15:05.597582",
       "updated_at": "2024-11-23T15:23:22.597587",
       "images": [
         {
           "url": "/images/blog3.jpg",
-          "alt": "Blog 3 Image"
+          "alt": "Sparkling Wine Toast"
         }
+      ],
+      "tags": [
+        "sparkling wine",
+        "Prosecco",
+        "celebration"
       ]
     },
     {
       "id": "5ed8d685-a6f4-49d0-82e0-5fbc8f041529",
       "userId": "34b63746-d823-411a-985f-2da9959b5892",
-      "title": "Blog Post 4",
-      "content": "Content for blog post 4",
+      "title": "Rosé: The Versatile Wine",
+      "content": "Rosé blends the freshness of white wine with the structure of red, offering strawberry and floral notes for any occasion.",
       "created_at": "2024-10-01T03:31:01.597597",
       "updated_at": "2024-04-17T10:41:59.597601",
       "images": [
         {
           "url": "/images/blog4.jpg",
-          "alt": "Blog 4 Image"
+          "alt": "Rosé Wine Picnic"
         }
+      ],
+      "tags": [
+        "rosé wine",
+        "versatile",
+        "summer drinks"
       ]
     },
     {
       "id": "627c9a08-b6af-42e7-8c8e-85b953e2ec39",
       "userId": "88e08203-8c40-4a04-8eeb-cad9e69482a3",
-      "title": "Blog Post 5",
-      "content": "Content for blog post 5",
+      "title": "Merlot: Smooth and Approachable",
+      "content": "Merlot’s soft tannins and plum flavors make it a crowd-pleaser, ideal for cozy evenings or casual gatherings.",
       "created_at": "2024-06-03T22:08:28.597617",
       "updated_at": "2024-07-31T06:53:54.597621",
       "images": [
         {
           "url": "/images/blog5.jpg",
-          "alt": "Blog 5 Image"
+          "alt": "Merlot Wine Tasting"
         }
+      ],
+      "tags": [
+        "red wine",
+        "Merlot",
+        "easy drinking"
       ]
     },
     {
       "id": "65df5a2c-657b-4fbd-9436-6e8d9e055ac9",
       "userId": "2a6763a3-b34a-45e6-aa40-3e0384682599",
-      "title": "Blog Post 6",
-      "content": "Content for blog post 6",
+      "title": "Sauvignon Blanc Adventures",
+      "content": "Sauvignon Blanc’s zesty acidity and herbaceous notes pair wonderfully with seafood or fresh salads.",
       "created_at": "2025-03-03T21:38:54.597666",
       "updated_at": "2024-09-20T04:11:26.597675",
       "images": [
         {
           "url": "/images/blog6.jpg",
-          "alt": "Blog 6 Image"
+          "alt": "Sauvignon Blanc Vineyard"
         }
+      ],
+      "tags": [
+        "white wine",
+        "Sauvignon Blanc",
+        "food pairing"
       ]
     },
     {
       "id": "cb50c12c-5621-4493-9fe6-b9786d9d08b7",
       "userId": "09e303a6-dfb9-45c4-918d-98821e5dee7e",
-      "title": "Blog Post 7",
-      "content": "Content for blog post 7",
+      "title": "Pinot Noir Elegance",
+      "content": "Pinot Noir’s delicate cherry and earthy flavors shine in dishes like roasted poultry or mushroom risotto.",
       "created_at": "2025-03-18T13:44:24.597691",
       "updated_at": "2025-01-07T23:04:23.597697",
       "images": [
         {
           "url": "/images/blog7.jpg",
-          "alt": "Blog 7 Image"
+          "alt": "Pinot Noir Glass"
         }
+      ],
+      "tags": [
+        "red wine",
+        "Pinot Noir",
+        "elegant"
       ]
     },
     {
       "id": "c80ab875-ca29-42ba-8786-55e3566e29d3",
       "userId": "17133e82-9091-4730-923a-1f9aa2595c65",
-      "title": "Blog Post 8",
-      "content": "Content for blog post 8",
+      "title": "The Rise of Natural Wines",
+      "content": "Natural wines, made with minimal intervention, offer unique, funky flavors for adventurous palates.",
       "created_at": "2024-09-19T17:25:16.597710",
       "updated_at": "2025-02-19T22:40:04.597715",
       "images": [
         {
           "url": "/images/blog8.jpg",
-          "alt": "Blog 8 Image"
+          "alt": "Natural Wine Bottles"
         }
+      ],
+      "tags": [
+        "natural wine",
+        "organic",
+        "wine trends"
       ]
     },
     {
       "id": "89ee882c-7426-4706-8116-819b52bdfd83",
       "userId": "17133e82-9091-4730-923a-1f9aa2595c65",
-      "title": "Blog Post 9",
-      "content": "Content for blog post 9",
+      "title": "Dessert Wines to Savor",
+      "content": "Sauternes, with its honeyed apricot notes, is a divine match for blue cheese or fruit tarts.",
       "created_at": "2024-06-05T07:04:17.597726",
       "updated_at": "2024-09-10T04:08:30.597731",
       "images": [
         {
           "url": "/images/blog9.jpg",
-          "alt": "Blog 9 Image"
+          "alt": "Dessert Wine Pairing"
         }
+      ],
+      "tags": [
+        "dessert wine",
+        "Sauternes",
+        "sweet wine"
       ]
     },
     {
       "id": "16e9a2ca-5d87-4b98-8a13-bd0ce25cb928",
       "userId": "2ea8d59a-1446-431b-8898-7a622c5389bc",
-      "title": "Blog Post 10",
-      "content": "Content for blog post 10",
+      "title": "Wine Tasting Tips",
+      "content": "Learn to swirl, sniff, and sip like a pro to unlock the full spectrum of flavors in every glass of wine.",
       "created_at": "2025-02-07T10:32:37.597741",
       "updated_at": "2024-11-13T01:55:32.597745",
       "images": [
         {
           "url": "/images/blog10.jpg",
-          "alt": "Blog 10 Image"
+          "alt": "Wine Tasting Event"
         }
+      ],
+      "tags": [
+        "wine tasting",
+        "tips",
+        "wine education"
       ]
     },
     {
       "id": "baa1714b-c95b-410e-a1b6-6d3410b28bb8",
       "userId": "34b63746-d823-411a-985f-2da9959b5892",
-      "title": "Blog Post 11",
-      "content": "Content for blog post 11",
+      "title": "Discovering Bordeaux Blends",
+      "content": "Bordeaux blends combine Cabernet Sauvignon and Merlot for a balanced wine with blackberry and spice notes, ideal for steak dinners.",
       "created_at": "2025-03-08T02:58:56.597760",
       "updated_at": "2025-02-19T18:43:49.597765",
       "images": [
         {
           "url": "/images/blog11.jpg",
-          "alt": "Blog 11 Image"
+          "alt": "Bordeaux Wine Glass"
         }
+      ],
+      "tags": [
+        "red wine",
+        "Bordeaux",
+        "wine blends"
       ]
     },
     {
       "id": "2bfa2c1d-99f8-4e48-a24e-4c7d7173a9ec",
       "userId": "03aa90fd-c98d-4984-b421-0d99064e8bc7",
-      "title": "Blog Post 12",
-      "content": "Content for blog post 12",
+      "title": "Riesling’s Sweet Versatility",
+      "content": "Riesling’s range from dry to sweet offers peach and mineral flavors, perfect for spicy dishes or dessert pairings.",
       "created_at": "2024-09-15T04:48:26.597775",
       "updated_at": "2025-02-10T10:25:14.597798",
       "images": [
         {
           "url": "/images/blog12.jpg",
-          "alt": "Blog 12 Image"
+          "alt": "Riesling Bottle"
         }
+      ],
+      "tags": [
+        "white wine",
+        "Riesling",
+        "versatile"
       ]
     },
     {
       "id": "da633fc1-1cff-457a-9649-4f5103231cf7",
       "userId": "d3756666-0bf0-4a18-bd72-8ccd2b56b1d8",
-      "title": "Blog Post 13",
-      "content": "Content for blog post 13",
+      "title": "The Allure of Chianti",
+      "content": "Chianti’s bright cherry and herbal notes make it a classic companion for pasta dishes with rich tomato sauces.",
       "created_at": "2025-01-28T22:34:34.597828",
       "updated_at": "2025-02-19T07:33:35.597835",
       "images": [
         {
           "url": "/images/blog13.jpg",
-          "alt": "Blog 13 Image"
+          "alt": "Chianti Vineyard"
         }
+      ],
+      "tags": [
+        "red wine",
+        "Chianti",
+        "Italian wine"
       ]
     },
     {
       "id": "da319605-7f44-4742-aeed-8b53b4fb8581",
       "userId": "78cf13fd-8a6a-4896-95ab-ad1e83509365",
-      "title": "Blog Post 14",
-      "content": "Content for blog post 14",
+      "title": "Champagne vs. Sparkling Wine",
+      "content": "Explore the nuances of Champagne’s fine bubbles and toasty flavors compared to other sparkling wines for your next celebration.",
       "created_at": "2024-12-08T11:36:17.597847",
       "updated_at": "2024-08-19T18:17:59.597852",
       "images": [
         {
           "url": "/images/blog14.jpg",
-          "alt": "Blog 14 Image"
+          "alt": "Champagne Flutes"
         }
+      ],
+      "tags": [
+        "sparkling wine",
+        "Champagne",
+        "celebration"
       ]
     },
     {
       "id": "2a96b0f0-ac85-4da8-9b5b-3012162632fa",
       "userId": "d587573e-73b2-4fe9-89d8-3cfbcf63f672",
-      "title": "Blog Post 15",
-      "content": "Content for blog post 15",
+      "title": "Syrah’s Bold Character",
+      "content": "Syrah delivers intense black pepper and dark fruit flavors, a robust choice for grilled meats or charcuterie.",
       "created_at": "2025-03-03T21:26:06.597861",
       "updated_at": "2024-05-06T03:06:43.597865",
       "images": [
         {
           "url": "/images/blog15.jpg",
-          "alt": "Blog 15 Image"
+          "alt": "Syrah Tasting"
         }
+      ],
+      "tags": [
+        "red wine",
+        "Syrah",
+        "bold flavors"
       ]
     },
     {
       "id": "93361c28-62ee-4be7-b27c-1379a7bac4dd",
       "userId": "b2293b7f-ad5b-44c8-ba24-25fefa9de53f",
-      "title": "Blog Post 16",
-      "content": "Content for blog post 16",
+      "title": "Pinot Grigio Perfection",
+      "content": "Pinot Grigio’s crisp pear and citrus notes make it a refreshing pick for seafood or warm summer evenings.",
       "created_at": "2024-11-24T06:26:16.597875",
       "updated_at": "2024-05-05T09:26:35.597879",
       "images": [
         {
           "url": "/images/blog16.jpg",
-          "alt": "Blog 16 Image"
+          "alt": "Pinot Grigio Glass"
         }
+      ],
+      "tags": [
+        "white wine",
+        "Pinot Grigio",
+        "refreshing"
       ]
     },
     {
       "id": "31639cff-3286-434f-9c51-7286a034f425",
       "userId": "57454c1e-a333-4a62-b38d-ac81602170b7",
-      "title": "Blog Post 17",
-      "content": "Content for blog post 17",
+      "title": "Port Wine’s Rich Legacy",
+      "content": "Port’s sweet, fortified richness with chocolate and berry notes is a timeless match for desserts or aged cheeses.",
       "created_at": "2024-10-29T18:39:40.597888",
       "updated_at": "2024-11-20T20:11:57.597892",
       "images": [
         {
           "url": "/images/blog17.jpg",
-          "alt": "Blog 17 Image"
+          "alt": "Port Wine Decanter"
         }
+      ],
+      "tags": [
+        "dessert wine",
+        "Port",
+        "fortified wine"
       ]
     },
     {
       "id": "cbf761f2-1097-40e0-85f2-4dc9d752a2a9",
       "userId": "57454c1e-a333-4a62-b38d-ac81602170b7",
-      "title": "Blog Post 18",
-      "content": "Content for blog post 18",
+      "title": "Tempranillo Tasting Notes",
+      "content": "Tempranillo’s leather and cherry flavors shine in Rioja wines, pairing beautifully with tapas or roasted lamb.",
       "created_at": "2025-01-02T03:04:16.597901",
       "updated_at": "2025-02-22T12:33:55.597906",
       "images": [
         {
           "url": "/images/blog18.jpg",
-          "alt": "Blog 18 Image"
+          "alt": "Tempranillo Bottle"
         }
+      ],
+      "tags": [
+        "red wine",
+        "Tempranillo",
+        "Spanish wine"
       ]
     },
     {
       "id": "592054bd-bb5d-4c69-84ee-6eb806d9fda5",
       "userId": "b2293b7f-ad5b-44c8-ba24-25fefa9de53f",
-      "title": "Blog Post 19",
-      "content": "Content for blog post 19",
+      "title": "Orange Wine Exploration",
+      "content": "Orange wines, with their unique amber hue and nutty flavors, offer a bold pairing for earthy dishes or charcuterie.",
       "created_at": "2024-06-08T16:12:38.597914",
       "updated_at": "2025-03-21T02:33:07.597918",
       "images": [
         {
           "url": "/images/blog19.jpg",
-          "alt": "Blog 19 Image"
+          "alt": "Orange Wine Pour"
         }
+      ],
+      "tags": [
+        "orange wine",
+        "natural wine",
+        "unique"
       ]
     },
     {
       "id": "416a81e1-bab7-422b-b785-a86443e6b643",
       "userId": "bc9118f6-1034-44bb-9a32-d752b8be58c8",
-      "title": "Blog Post 20",
-      "content": "Content for blog post 20",
+      "title": "Wine and Cheese Pairing Guide",
+      "content": "Master the art of pairing wines like Sauvignon Blanc with goat cheese or Cabernet with aged cheddar for unforgettable flavors.",
       "created_at": "2024-10-18T23:44:05.597927",
       "updated_at": "2025-03-08T22:42:54.597931",
       "images": [
         {
           "url": "/images/blog20.jpg",
-          "alt": "Blog 20 Image"
+          "alt": "Wine and Cheese Board"
         }
+      ],
+      "tags": [
+        "wine pairing",
+        "cheese",
+        "tasting tips"
       ]
     }
   ],
@@ -3233,6 +3333,16 @@
       "content": "Comment on blog Blog Post 20",
       "created_at": "2024-06-20T01:55:07.598585",
       "updated_at": "2024-12-09T10:45:08.598589"
+    },
+    {
+      "userId": "d587573e-73b2-4fe9-89d8-3cfbcf63f672",
+      "blogId": "0b52a4bd-bb4d-4707-a35d-2c87c9ad30f7",
+      "content": "aaaaaa bai viet hay qua",
+      "created_at": "2025-04-14T09:32:58.521Z",
+      "updated_at": "2025-04-14T09:32:58.521Z",
+      "email": "user1@example.com",
+      "username": "khaine",
+      "id": "qbBX2yL"
     }
   ]
 }

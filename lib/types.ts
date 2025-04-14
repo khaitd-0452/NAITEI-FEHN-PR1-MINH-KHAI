@@ -1,4 +1,3 @@
-
 export type Order = {
   id: number | string;
   stt: string;
@@ -37,7 +36,7 @@ export type Product = {
   subCategory: string;
   createdAt: string;
   updatedAt: string;
-  stock : number;
+  stock: number;
   discount?: number;
 };
 
@@ -56,24 +55,23 @@ export type Address = {
   updated_at: string;
 };
 
+export type BlogPost = {
+  id: string;
+  imageUrl: string;
+  title: string;
+  author: string;
+  date: string;
+  commentCount: number;
+  description: string;
+  href: string;
+};
 
-export type BlogPost =  {
-    id: string;
-    imageUrl: string;
-    title: string;
-    author: string;
-    date: string;
-    commentCount: number;
-    description: string;
-    href: string;
-  }
-
-  export type Cart = {
-    id: string;
-    productId: string;
-    checked: boolean;
-    quantity: number;
-    createdAt: string;
-    updatedAt: string;
-    product: Product;
-  }
+export type Cart = {
+  id: string;
+  productId: string;
+  checked: boolean;
+  quantity: number;
+  createdAt: string;
+  updatedAt: string;
+  product: Product;
+};
