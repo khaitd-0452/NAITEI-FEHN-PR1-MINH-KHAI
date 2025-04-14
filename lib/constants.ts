@@ -1,3 +1,8 @@
+import { IconType } from "react-icons/lib";
+import { RiHomeLine } from "react-icons/ri";
+import { HiOutlineUserGroup } from "react-icons/hi2";
+import { AiFillProduct } from "react-icons/ai";
+import { MdOutlineShoppingCart } from "react-icons/md";
 export const ROUTES = [
   {
     href: "/",
@@ -49,7 +54,40 @@ export const ROUTES = [
   },
 ];
 
-export type OrderStatusEN = "cancelled" | "pending" | "shipped" | "delivered";
+  export type NavigationItem = {
+    label: string;
+    icon: IconType;
+    href: string;
+    tooltip: string;
+  };
+  export const navigation: NavigationItem[] = [
+    {
+      label: "Trang chủ",
+      icon: RiHomeLine,
+      href: "/admin",
+      tooltip: "Trang chủ",
+    },
+    {
+      label: "Người dùng",
+      icon: HiOutlineUserGroup,
+      href: "/admin/user",
+      tooltip: "Người dùng",
+    },
+    {
+      label: "Sản phẩm",
+      icon: AiFillProduct,
+      href: "/admin/product",
+      tooltip: "Sản phẩm",
+    },
+    {
+      label: "Đơn hàng",
+      icon: MdOutlineShoppingCart,
+      href: "/admin/order",
+      tooltip: "Đơn hàng",
+    },
+  ];
+
+export  type OrderStatusEN = 'cancelled' | 'pending' | 'shipped' | 'delivered';
 
 export type OrderStatusVN =
   | "Đã hủy"

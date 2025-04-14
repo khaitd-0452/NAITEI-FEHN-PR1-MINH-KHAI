@@ -114,7 +114,13 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+.shine {
+  box-shadow: 0px 2px 14px 0px #000;
 }
