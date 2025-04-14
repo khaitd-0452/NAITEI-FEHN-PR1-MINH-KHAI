@@ -39,6 +39,14 @@ export const ROUTES = [
     href: "/addresses",
     label: "Địa chỉ",
   },
+  {
+    href: "/auth/sign-in",
+    label: "Đăng nhập",
+  },
+  {
+    href: "/auth/sign-up",
+    label: "Đăng ký",
+  },
 ];
 
 export type OrderStatusEN = "cancelled" | "pending" | "shipped" | "delivered";
