@@ -6,6 +6,8 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { useAuth } from "@/app/context/AuthContext";
 import LabeledInput from "@/components/signin-signup/input-label";
+import { toast } from "sonner";
+import { CheckCircle2 } from "lucide-react";
 
 interface LoginFormData {
   email: string;
@@ -34,27 +36,49 @@ export default function SignInMain() {
 
     try {
       const serverApiUrl =
-        process.env.SERVER_API_URL || "http://localhost:5000";
-      const res = await axios.get(`${serverApiUrl}/users`, {
+        process.env.NEXT_PUBLIC_SERVER_API_URL || "http://localhost:5000";
+      const response = await axios.get(`${serverApiUrl}/users`, {
         params: {
           email: formData.email,
           password: formData.password,
         },
       });
-      const users = res.data;
 
-      if (users.length === 0) {
-        alert("Sai email hoặc mật khẩu");
-        return;
+      if (response.status === 200) {
+        const users = response.data;
+        if (users.length === 0) {
+          throw new Error("Sai email hoặc mật khẩu");
+        }
+
+        const user = users[0];
+        Cookies.set("user", JSON.stringify(user));
+        setCurrentUser(user);
+        toast.success("Đăng nhập thành công!", {
+          style: {
+            background: "green",
+            color: "#fff",
+          },
+          icon: <CheckCircle2 className="text-white" />,
+        });
+        router.push("/");
+      } else {
+        throw new Error(`API responded with status ${response.status}`);
       }
-
-      const user = users[0];
-      Cookies.set("user", JSON.stringify(user));
-      setCurrentUser(user);
-      router.push("/");
     } catch (error) {
-      console.error("Login failed:", error);
-      alert("Có lỗi xảy ra, vui lòng thử lại sau.");
+      let errorMessage = "Đã xảy ra lỗi khi đăng nhập. Vui lòng thử lại.";
+      if (axios.isAxiosError(error)) {
+        errorMessage = `Lỗi API: ${
+          error.response?.data?.message || error.message
+        }`;
+      } else if (error instanceof Error) {
+        errorMessage = error.message;
+      }
+      toast.error(errorMessage, {
+        style: {
+          background: "red",
+          color: "#fff",
+        },
+      });
     }
   };
 

@@ -22,7 +22,7 @@
 }
 
 export type ProductItem = {
-  id: number | string;
+  id: string;
   imageUrl: string;
   imageAlt: string;
   productName: string;
