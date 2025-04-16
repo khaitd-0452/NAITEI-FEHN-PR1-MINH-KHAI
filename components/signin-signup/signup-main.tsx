@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import LabeledInput from "@/components/signin-signup/input-label";
+import { toast } from "sonner";
+import { CheckCircle2 } from "lucide-react";
 
 interface RegistrationFormData {
   firstName: string;
@@ -36,7 +38,8 @@ export default function SignUpMain() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const serverApiUrl = process.env.SERVER_API_URL || "http://localhost:5000";
+    const serverApiUrl =
+      process.env.NEXT_PUBLIC_SERVER_API_URL || "http://localhost:5000";
     const requiredFields = [
       "firstName",
       "lastName",
@@ -45,27 +48,58 @@ export default function SignUpMain() {
       "password",
       "confirmPassword",
     ];
+
     for (const field of requiredFields) {
       if (!formData[field as keyof RegistrationFormData]) {
-        alert("Vui lòng điền đầy đủ tất cả các trường bắt buộc!");
+        toast.error("Vui lòng điền đầy đủ tất cả các trường bắt buộc!", {
+          style: {
+            background: "red",
+            color: "#fff",
+          },
+        });
         return;
       }
     }
+
     if (formData.password !== formData.confirmPassword) {
-      alert("Mật khẩu và xác nhận mật khẩu không khớp!");
+      toast.error("Mật khẩu và xác nhận mật khẩu không khớp!", {
+        style: {
+          background: "red",
+          color: "#fff",
+        },
+      });
       return;
     }
+
     try {
       const response = await axios.get(`${serverApiUrl}/users`, {
         params: { email: formData.email },
       });
-      if (response.data.length > 0) {
-        alert("Email này đã được sử dụng, vui lòng chọn email khác!");
-        return;
+
+      if (response.status === 200) {
+        if (response.data.length > 0) {
+          throw new Error(
+            "Email này đã được sử dụng, vui lòng chọn email khác!"
+          );
+        }
+      } else {
+        throw new Error(`API responded with status ${response.status}`);
       }
     } catch (error) {
-      console.error("Lỗi khi kiểm tra email:", error);
-      alert("Có lỗi xảy ra khi kiểm tra email, vui lòng thử lại sau.");
+      let errorMessage = "Có lỗi xảy ra khi kiểm tra email, vui lòng thử lại.";
+      if (axios.isAxiosError(error)) {
+        errorMessage = `Lỗi API: ${
+          error.response?.data?.message || error.message
+        }`;
+      } else if (error instanceof Error) {
+        errorMessage = error.message;
+      }
+      toast.error(errorMessage, {
+        style: {
+          background: "red",
+          color: "#fff",
+        },
+      });
       return;
     }
 
@@ -80,6 +114,7 @@ export default function SignUpMain() {
         subscribeToNewsletter,
       } = formData;
       const userData = {
+        id: crypto.randomUUID(),
         full_name: `${firstName} ${lastName}`,
         username,
         email,
@@ -91,12 +126,32 @@ export default function SignUpMain() {
       };
 
       const response = await axios.post(`${serverApiUrl}/users`, userData);
-      console.log("Đăng ký thành công:", response.data);
-      alert("Đăng ký thành công!");
-      router.push("/auth/sign-in");
+
+      if (response.status === 201 || response.status === 200) {
+        toast.success("Đăng ký thành công!", {
+          style: {
+            background: "green",
+            color: "#fff",
+          },
+          icon: <CheckCircle2 className="text-white" />,
+        });
+        router.push("/auth/sign-in");
+      } else {
+        throw new Error(`API responded with status ${response.status}`);
+      }
     } catch (error) {
-      console.error("Đăng ký thất bại:", error);
-      alert("Có lỗi xảy ra khi đăng ký, vui lòng thử lại sau.");
+      let errorMessage = "Có lỗi xảy ra khi đăng ký, vui lòng thử lại.";
+      if (axios.isAxiosError(error)) {
+        errorMessage = `Lỗi API: ${
+          error.response?.data?.message || error.message
+        }`;
+      }
+      toast.error(errorMessage, {
+        style: {
+          background: "red",
+          color: "#fff",
+        },
+      });
     }
   };
 

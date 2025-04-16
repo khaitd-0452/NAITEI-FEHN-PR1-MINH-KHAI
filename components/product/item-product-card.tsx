@@ -1,21 +1,21 @@
 ﻿"use client";
 import React from "react";
 import Image from "next/image";
-import { ProductItem } from "@/lib/types/product";
+import { ItemProductProps } from "@/components/product/item-product";
 
 export default function ItemProductCard({
-  imageUrl,
-  imageAlt,
-  productName,
-  currentPrice,
-  description,
-}: ProductItem) {
+  product,
+  onClick,
+}: ItemProductProps) {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-start py-8 px-4 bg-white mx-auto border-b w-full">
+    <div
+      className="flex flex-col md:flex-row items-center justify-start py-8 px-4 bg-white mx-auto border-b w-full"
+      onClick={() => onClick(product.id)}
+    >
       <div className="relative w-full md:w-1/4 h-48 md:h-78">
         <Image
-          src={imageUrl}
-          alt={imageAlt}
+          src={product.imageUrl}
+          alt={product.imageAlt}
           fill
           className="lg:object-cover md:object-contain"
           priority
@@ -24,14 +24,14 @@ export default function ItemProductCard({
 
       <div className="flex-1 h-auto md:h-78 mt-4 md:mt-0 ml-0 md:ml-4 flex flex-col justify-start">
         <h3 className="text-left font-medium text-gray-800 mt-3 mb-1">
-          {productName}
+          {product.productName}
         </h3>
 
         <span className="text-amber-500 font-medium text-lg">
-          {currentPrice}
+          {product.currentPrice}
         </span>
 
-        <p className="text-xs text-gray-500 mt-1">{description}</p>
+        <p className="text-xs text-gray-500 mt-1">{product.description}</p>
 
         <div className="flex flex-row items-center gap-5 mt-3">
           <button className="bg-black text-white uppercase text-xs font-medium py-2 transition-colors w-full md:w-35 cursor-pointer hover:bg-amber-500">

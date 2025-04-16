@@ -3,19 +3,21 @@ import React from "react";
 import Image from "next/image";
 import { ProductItem } from "@/lib/types/product";
 
-export default function ItemProduct({
-  imageUrl,
-  imageAlt,
-  productName,
-  currentPrice,
-  originalPrice,
-}: ProductItem) {
+export interface ItemProductProps {
+  product: ProductItem;
+  onClick: (id: string) => void;
+}
+
+export default function ItemProduct({ product, onClick }: ItemProductProps) {
   return (
-    <div className="bg-white flex flex-col items-center max-w-xs group cursor-pointer">
+    <div
+      className="bg-white flex flex-col items-center max-w-xs group cursor-pointer"
+      onClick={() => onClick(product.id)}
+    >
       <div className="relative w-full h-52 sm:h-64 md:h-72 lg:h-78 mb-0">
         <Image
-          src={imageUrl}
-          alt={imageAlt}
+          src={product.imageUrl}
+          alt={product.imageAlt}
           fill
           className="object-contain"
           priority
@@ -78,15 +80,15 @@ export default function ItemProduct({
       </div>
 
       <h3 className="text-center font-medium text-gray-800 group-hover:text-amber-500 mt-3 mb-1">
-        {productName}
+        {product.productName}
       </h3>
 
       <div className="flex items-center gap-2 mb-3">
         <span className="text-amber-500 font-medium text-lg">
-          {currentPrice}
+          {product.currentPrice}
         </span>
         <span className="text-gray-400 line-through text-sm">
-          {originalPrice}
+          {product.originalPrice}
         </span>
       </div>
 

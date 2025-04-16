@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import ItemProduct from "@/components/product/item-product";
 import { Grid3X3, List } from "lucide-react";
 import ItemProductCard from "@/components/product/item-product-card";
+import { useRouter } from "next/navigation";
 
 interface ProductListWithPaginationProps {
   products: ProductItem[];
@@ -94,6 +95,7 @@ export function Pagination({
 export default function ProductListWithPagination({
   products,
 }: ProductListWithPaginationProps) {
+  const route = useRouter();
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [currentPage, setCurrentPage] = useState(1);
   const { itemsPerPage, totalPages } = useMemo(() => {
@@ -111,6 +113,10 @@ export default function ProductListWithPagination({
     return products.slice(start, start + itemsPerPage);
   }, [products, currentPage, itemsPerPage]);
 
+  const handleProductDetail = (id: string) => {
+    route.push(`product/${id}`);
+  };
+
   return (
     <div className="w-full">
       <Pagination
@@ -123,13 +129,21 @@ export default function ProductListWithPagination({
       {viewMode === "grid" ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:gap-14 gap-6">
           {paginatedProducts.map((product) => (
-            <ItemProduct key={product.id} {...product} />
+            <ItemProduct
+              key={product.id}
+              product={product}
+              onClick={handleProductDetail}
+            />
           ))}
         </div>
       ) : (
         <div className="flex w-full flex-col">
           {paginatedProducts.map((product) => (
-            <ItemProductCard key={product.id} {...product} />
+            <ItemProductCard
+              key={product.id}
+              product={product}
+              onClick={handleProductDetail}
+            />
           ))}
         </div>
       )}
