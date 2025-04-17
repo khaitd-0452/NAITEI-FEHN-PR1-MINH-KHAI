@@ -13,6 +13,7 @@ export interface LabeledInputProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   required?: boolean;
   className?: string;
+  classNameLabel?: string;
   showToggle?: boolean;
 }
 
@@ -25,13 +26,14 @@ const LabeledInput: React.FC<LabeledInputProps> = ({
   onChange,
   required = false,
   className = "",
+  classNameLabel = "",
   showToggle = false,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className="mb-4">
-      <label htmlFor={id} className="block mb-2">
+      <label htmlFor={id} className={`block mb-2 ${classNameLabel}`}>
         {label} {required && <span className="text-red-500">*</span>}
       </label>
       <div className="relative">

@@ -1,6 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { OrderStatusVN } from "./constants";
+import { format } from "date-fns";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -47,33 +48,65 @@ export function formatVndThousands(
   }
 }
 
-
 export function statusStyle(status: string | null | undefined): string {
-  let statusClasses =
-  "inline-block px-3 py-1 rounded-full font-medium";
+  let statusClasses = "inline-block px-3 py-1 rounded-full font-medium";
   const lowerCaseStatus = status?.toLowerCase();
   switch (lowerCaseStatus) {
-        case "delivered": // Green for success
-          statusClasses +=
-            " bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300";
-          break;
-        case "cancelled": // Red for cancellation/failure
-          statusClasses +=
-            " bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300";
-          break;
-        case "shipped": // Blue for in-progress/informational
-          statusClasses +=
-            " bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300";
-          break;
-        case "pending":
-          statusClasses +=
-            " bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300";
-          break;
-        default:
-          statusClasses +=
-            " bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300";
-          break;
-      }
+    case "delivered": // Green for success
+      statusClasses +=
+        " bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300";
+      break;
+    case "cancelled": // Red for cancellation/failure
+      statusClasses +=
+        " bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300";
+      break;
+    case "shipped": // Blue for in-progress/informational
+      statusClasses +=
+        " bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300";
+      break;
+    case "pending":
+      statusClasses +=
+        " bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300";
+      break;
+    default:
+      statusClasses +=
+        " bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300";
+      break;
+  }
 
   return statusClasses;
 }
+
+export function formatTimeAgo(dateString: string): string {
+  const now = new Date();
+  const date = new Date(dateString);
+  const secondsDiff = Math.floor((now.getTime() - date.getTime()) / 1000);
+
+  const intervals = [
+    { label: "năm", seconds: 31536000 },
+    { label: "tháng", seconds: 2592000 },
+    { label: "ngày", seconds: 86400 },
+    { label: "giờ", seconds: 3600 },
+    { label: "phút", seconds: 60 },
+    { label: "giây", seconds: 1 },
+  ];
+
+  for (const interval of intervals) {
+    const count = Math.floor(secondsDiff / interval.seconds);
+    if (count >= 1) {
+      return `${count} ${interval.label} trước`;
+    }
+  }
+
+  return "vừa xong";
+}
+
+export const formatDisplayDate = (dateString: string): string => {
+  try {
+    const date = new Date(dateString);
+    return format(date, "dd/MM/yyyy");
+  } catch (error) {
+    console.error("Error formatting date:", error);
+    return "Invalid date";
+  }
+};
