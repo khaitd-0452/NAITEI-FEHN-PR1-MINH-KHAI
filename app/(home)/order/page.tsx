@@ -4,9 +4,9 @@ import Link from "next/link";
 import React from "react";
 import { FaUser, FaEnvelope, FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 import axios from "axios";
-import { columns } from "@/components/order/column"; // Adjust path
+import { clientOrderColumns } from "@/components/order/column"; // Adjust path
 import { OrderList } from "@/components/order/order-list"; // <<< Import Client Component mới
-import { Order } from "@/lib/types";
+import { Order, OrderWithUser } from "@/lib/types";
 import { getCurrentUserServer } from "@/lib/server-utils";
 import { notFound } from "next/navigation";
 
@@ -19,7 +19,7 @@ const sampleCustomerInfo = {
   addressDetailUrl: "/addresses",
 };
 
-async function getOrders(userId: string): Promise<Order[]> {
+async function getOrders(userId: string): Promise<OrderWithUser[]> {
   try {
     const res = await axios.get(
       `${process.env.NEXT_PUBLIC_SERVER_API_URL}/orders?_embed=order_items&_sort=created_at&_order=desc&userId=${userId}`
@@ -36,7 +36,7 @@ async function getOrders(userId: string): Promise<Order[]> {
           paymentMethod: order.payment_method as string,
           stt: (index + 1).toString(),
           detailUrl: `/order/${order.id}`,
-        } as Order)
+        } as OrderWithUser)
     );
     return ordersData;
   } catch (error) {
@@ -71,7 +71,10 @@ export default async function OrderPage() {
 
       <div className="flex flex-col lg:flex-row gap-8 ">
         <div className="w-full lg:flex-1">
-          <OrderList initialOrders={initialOrders} columns={columns} />
+          <OrderList
+            initialOrders={initialOrders}
+            columns={clientOrderColumns}
+          />
         </div>
 
         <div className="w-full lg:w-1/4">

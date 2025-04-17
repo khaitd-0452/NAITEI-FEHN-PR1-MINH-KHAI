@@ -6,11 +6,15 @@ import { translateOrderStatusTS } from "@/lib/utils"; // Adjust path
 import { ColumnDef } from "@tanstack/react-table"; // Import ColumnDef
 import clsx from "clsx"; // Thư viện tiện ích để nối các class name có điều kiện
 import { OrderStatusEN } from "@/lib/constants";
-import { Order } from "@/lib/types";
+import { Order, OrderWithUser, User } from "@/lib/types";
+import { Button } from "../ui/button";
+import { RefreshCw } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 interface OrderListProps {
-  initialOrders: Order[];
-  columns: ColumnDef<Order>[];
+  initialOrders: OrderWithUser[];
+  columns: ColumnDef<OrderWithUser>[];
 }
 
 const filterableStatuses: (OrderStatusEN | null)[] = [
@@ -25,6 +29,7 @@ export function OrderList({ initialOrders, columns }: OrderListProps) {
   const [selectedStatus, setSelectedStatus] = useState<OrderStatusEN | null>(
     null
   );
+  const router = useRouter(); // Assuming you are using Next.js router
 
   const statusCounts = useMemo(() => {
     const counts: Record<string, number> = {};
@@ -57,10 +62,19 @@ export function OrderList({ initialOrders, columns }: OrderListProps) {
     const translated = translateOrderStatusTS(statusKey);
     return `${translated} (${statusCounts[translated] ?? 0})`;
   };
-
+  const handleRefresh = () => {
+    router.refresh(); // Trigger a server-side data refresh
+    toast.success("Đã làm mới danh sách đơn hàng!");
+  };
   return (
     <div className="space-y-4 bg-gray-50 border border-gray-300 rounded p-4">
-      <h2 className="text-xl  border-b pb-2">DANH SÁCH ĐƠN HÀNG</h2>
+      <div className="flex justify-between items-center border-b pb-2">
+        <h2 className="text-xl">DANH SÁCH ĐƠN HÀNG</h2>
+        <Button variant="outline" onClick={handleRefresh}>
+          <RefreshCw className="mr-2 h-4 w-4" /> {/* Optional icon */}
+          Làm mới
+        </Button>
+      </div>
 
       <div className="text-xs text-gray-600 leading-relaxed flex flex-wrap items-center gap-x-2 gap-y-1">
         <span className="font-medium mr-1">Trạng thái:</span>

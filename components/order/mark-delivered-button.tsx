@@ -78,7 +78,7 @@ export function MarkAsDeliveredButtonClient({
           Đang cập nhật...
         </>
       ) : (
-        "Đánh dấu Đã giao hàng"
+        "Đã nhận đơn hàng"
       )}
     </Button>
   );

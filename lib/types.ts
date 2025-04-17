@@ -10,6 +10,21 @@ export type Order = {
   detailUrl: string;
 };
 
+export type OrderWithUser = Order & {
+  user: User;
+};
+
+export type User = {
+  id: string;
+  full_name: string;
+  email: string;
+  username: string;
+  role: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+
 export type OrderItem = {
   id: string;
   productId: string;
